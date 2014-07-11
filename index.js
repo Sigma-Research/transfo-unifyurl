@@ -79,7 +79,7 @@ module.exports = function(src, dest, options, addFile) {
         try {
           stat = fs.statSync(from);
         } catch(e) {
-          // Ignore sources not found
+          console.warn("Cannot find source file:", from);
           return match;
         }
 
