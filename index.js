@@ -54,8 +54,9 @@ module.exports = function(src, dest, options, addFile) {
 
 
 
+        var abspath = /^(\w+\:|\/)/;
         // Only relative path
-        if(path[0] !== '.') {
+        if(abspath.test(path)) {
           return match;
         }
 
