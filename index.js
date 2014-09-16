@@ -29,7 +29,9 @@ module.exports = function(src, dest, options, addFile) {
     url:        null,
 
     // List source extension to process. Other sources are ignored.
-    extensions: ['.css']
+    extensions: ['.css'],
+
+    callback: function(){},
 
   }, options.unifyurl || {});
 
@@ -94,7 +96,8 @@ module.exports = function(src, dest, options, addFile) {
         toUrl   += hashName;
         to       = join(dirname(dest), uopt.dest, hashName);
 
-
+        callback(from, to, toUrl);
+        
         debug('  %s->%s url("%s")', from, to, toUrl);
 
         // Add file to transfo pipeline
