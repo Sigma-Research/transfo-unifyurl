@@ -10,7 +10,7 @@ var through2 = require('through2'),
   debug = require('debug')('unifyurl');
 
 var matchUrl = /url\s*\(\s*(['"]?)([^)]+)\1\s*\)/g;
-var matchImport = /@import\s*(['"]?)([^;]+)\1\s*;/g;
+var matchImport = /@import\s*(['"]?)(\.[^;]+)\1\s*;/g;
 
 // See [grunt-transfo transforms option](https://github.com/nopnop/grunt-transfo#transforms)
 module.exports = function(pname) {
